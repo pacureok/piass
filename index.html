@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gemini Clone - Colab AI</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <div class="logo">Gemini <span class="alt">Colab</span></div>
+            <input type="text" id="ngrok-url" placeholder="Pega tu URL de Ngrok aquí (https://...)">
+        </header>
+
+        <main id="chat-window">
+            <div class="message ai">¡Hola! Configura la URL de Colab arriba y dime qué quieres crear (Texto, Imagen o Música).</div>
+        </main>
+
+        <footer class="input-area">
+            <div class="controls">
+                <select id="mode">
+                    <option value="text">💬 Chat</option>
+                    <option value="image">🎨 Imagen</option>
+                    <option value="music">🎵 Música</option>
+                </select>
+            </div>
+            <div class="input-box">
+                <input type="text" id="user-input" placeholder="Escribe tu prompt aquí...">
+                <button id="send-btn">➔</button>
+            </div>
+        </footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
