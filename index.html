@@ -3,33 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gemini Clone - Colab AI</title>
+    <title>PIAS AI - Generative Suite</title>
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="app-container">
-        <header>
-            <div class="logo">Gemini <span class="alt">Colab</span></div>
-            <input type="text" id="ngrok-url" placeholder="Pega tu URL de Ngrok aquí (https://...)">
-        </header>
+        <aside class="sidebar">
+            <div class="logo-container">
+                <img src="/favicon.ico" alt="PIAS" class="mini-logo">
+                <span class="brand">PIAS</span>
+            </div>
+            <div class="config-box">
+                <label>Conexión Colab</label>
+                <input type="text" id="ngrok-url" placeholder="https://xxxx.ngrok-free.app">
+            </div>
+        </aside>
 
-        <main id="chat-window">
-            <div class="message ai">¡Hola! Configura la URL de Colab arriba y dime qué quieres crear (Texto, Imagen o Música).</div>
+        <main class="main-content">
+            <header class="top-bar">
+                <h1>PIAS <span class="gradient-text">Intelligence</span></h1>
+            </header>
+
+            <div id="chat-window" class="chat-container">
+                <div class="message ai-msg">
+                    <img src="/favicon.ico" class="avatar">
+                    <div class="text">Hola, soy <b>PIAS</b>. ¿Qué vamos a crear hoy? Puedo generar música, imágenes o responder tus dudas.</div>
+                </div>
+            </div>
+
+            <div class="input-wrapper">
+                <div class="input-card">
+                    <select id="mode" class="mode-select">
+                        <option value="text">💬 Chat</option>
+                        <option value="image">🎨 Imagen</option>
+                        <option value="music">🎵 Música</option>
+                    </select>
+                    <input type="text" id="user-input" placeholder="Escribe un prompt para PIAS...">
+                    <button id="send-btn">
+                        <svg viewBox="0 0 24 24"><path d="M2,21L23,12L2,3V10L17,12L2,14V21Z" /></svg>
+                    </button>
+                </div>
+                <p class="disclaimer">PIAS puede producir errores. Verifica la URL de Ngrok si no responde.</p>
+            </div>
         </main>
-
-        <footer class="input-area">
-            <div class="controls">
-                <select id="mode">
-                    <option value="text">💬 Chat</option>
-                    <option value="image">🎨 Imagen</option>
-                    <option value="music">🎵 Música</option>
-                </select>
-            </div>
-            <div class="input-box">
-                <input type="text" id="user-input" placeholder="Escribe tu prompt aquí...">
-                <button id="send-btn">➔</button>
-            </div>
-        </footer>
     </div>
     <script src="script.js"></script>
 </body>
